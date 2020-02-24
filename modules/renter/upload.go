@@ -9,12 +9,12 @@ package renter
 // all need to be fixed when we do enable it, but we should enable it.
 
 import (
-	"fmt"
+	// "fmt"
 	"os"
 
 	"gitlab.com/NebulousLabs/errors"
 
-	"gitlab.com/NebulousLabs/Sia/build"
+	// "gitlab.com/NebulousLabs/Sia/build"
 	"gitlab.com/NebulousLabs/Sia/crypto"
 	"gitlab.com/NebulousLabs/Sia/modules"
 	"gitlab.com/NebulousLabs/Sia/modules/renter/filesystem"
@@ -67,11 +67,11 @@ func (r *Renter) Upload(up modules.FileUploadParams) error {
 	// parity/2 contracts. NumPieces is equal to data+parity, and min pieces is
 	// equal to parity. Therefore (NumPieces+MinPieces)/2 = (data+data+parity)/2
 	// = data+parity/2.
-	numContracts := len(r.hostContractor.Contracts())
-	requiredContracts := (up.ErasureCode.NumPieces() + up.ErasureCode.MinPieces()) / 2
-	if numContracts < requiredContracts && build.Release != "testing" {
-		return fmt.Errorf("not enough contracts to upload file: got %v, needed %v", numContracts, (up.ErasureCode.NumPieces()+up.ErasureCode.MinPieces())/2)
-	}
+	// numContracts := len(r.hostContractor.Contracts())
+	// requiredContracts := (up.ErasureCode.NumPieces() + up.ErasureCode.MinPieces()) / 2
+	// if numContracts < requiredContracts && build.Release != "testing" {
+	// 	return fmt.Errorf("not enough contracts to upload file: got %v, needed %v", numContracts, (up.ErasureCode.NumPieces()+up.ErasureCode.MinPieces())/2)
+	// }
 
 	// Create the directory path on disk. Renter directory is already present so
 	// only files not in top level directory need to have directories created
