@@ -27,7 +27,7 @@ for arch in amd64 arm; do
 	                fi
 
 			# Build binary.
-	                GOOS=${os} GOARCH=${arch} go build -tags='netgo' -o artifacts/$arch/$os/$bin ./cmd/$pkg
+	                GOOS=${os} GOARCH=${arch} go build -tags='dev debug profile netgo' -o artifacts/$arch/$os/$bin ./cmd/$pkg
 	        done
 	done
 done
